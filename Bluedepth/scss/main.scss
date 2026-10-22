@@ -1,0 +1,353 @@
+@use "sass:color";
+@use "sass:math";
+
+// VARIABLES
+$color-bg: #eef8ff;
+$color-text: #16324a;
+$color-muted: #55758c;
+$color-accent: #0787ae;
+$color-border: #c5e1f0;
+
+// FUNCIÓN PROPIA
+@function pxToRem($px) {
+  @return math.div($px, 16) * 1rem;
+}
+
+// MIXIN
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// FUNCIÓN NATIVA (lighten)
+@mixin accent-hover {
+  &:hover {
+    background-color: color.adjust($color-accent, $lightness: 10%);
+  }
+}
+
+/* ------------------------------ */
+/* TU CSS ADAPTADO A SASS         */
+/* ------------------------------ */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-blue {
+  background-color: color.adjust($color-accent, $lightness: 10%);
+}
+
+.text-muted-custom {
+  color: $color-muted;
+}
+
+.section-label {
+  color: $color-accent;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+/* NAVBAR */
+.navbar-bluedepth {
+  background-color: #fff;
+  border-bottom: 1px solid $color-border;
+}
+
+.logo-box {
+  width: 42px;
+  height: 42px;
+  @include flex-center;
+  background-color: color.adjust($color-accent, $lightness: 15%);
+  color: $color-text;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.brand-name {
+  color: $color-text;
+  font-size: 1.25rem;
+  font-weight: bold;
+
+  span {
+    color: $color-accent;
+  }
+}
+
+.brand-subtitle {
+  display: block;
+  color: #6c899d;
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+}
+
+.navbar-bluedepth .nav-link {
+  color: $color-muted;
+  font-size: 0.9rem;
+
+  @include accent-hover;
+}
+
+.navbar-bluedepth .nav-link.active {
+  color: $color-accent;
+}
+
+/* BOTONES */
+.btn-ocean {
+  background-color: $color-accent;
+  border-color: $color-accent;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.7rem 1.4rem;
+
+  &:hover {
+    background-color: color.scale($color-accent, $lightness: -10%);
+    border-color: color.scale($color-accent, $lightness: -10%);
+  }
+}
+
+.btn-ocean-outline {
+  background-color: transparent;
+  border: 1px solid $color-accent;
+  color: $color-accent;
+  font-weight: bold;
+
+  &:hover {
+    background-color: $color-accent;
+    color: #fff;
+  }
+}
+
+/* HERO */
+.hero {
+  min-height: pxToRem(520);
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(238, 248, 255, 0.97) 0%,
+      rgba(238, 248, 255, 0.90) 45%,
+      rgba(238, 248, 255, 0.35) 100%
+    ),
+    url("../img/hero-oceano.jpg");
+
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid $color-border;
+}
+
+.hero-title {
+  max-width: 700px;
+  margin-top: 1rem;
+  color: $color-text;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -3px;
+
+  span {
+    color: $color-accent;
+  }
+}
+
+.hero-description {
+  max-width: 570px;
+  margin-top: 1.5rem;
+  color: $color-muted;
+  line-height: 1.8;
+}
+
+/* ESTADÍSTICAS */
+.stats-container {
+  max-width: 650px;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid color.scale($color-border, $lightness: 10%);
+}
+
+.stat-number {
+  display: block;
+  color: $color-accent;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.stat-text {
+  color: $color-muted;
+  font-size: 0.75rem;
+}
+
+/* PANEL PROFUNDIDAD */
+.depth-panel {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1px solid color.scale($color-border, $lightness: 10%);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(20, 80, 110, 0.12);
+}
+
+.depth-panel-title {
+  color: $color-accent;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.depth-number {
+  margin: 1rem 0 0;
+  color: $color-text;
+  font-size: 3.5rem;
+  font-weight: 900;
+
+  span {
+    color: $color-accent;
+    font-size: 1.3rem;
+  }
+}
+
+.depth-subtitle {
+  color: #6c899d;
+}
+
+.depth-progress {
+  height: 8px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  background-color: color.scale($color-border, $lightness: 20%);
+  border-radius: 20px;
+}
+
+.depth-progress-bar {
+  width: 35%;
+  height: 100%;
+  background-color: color.scale($color-accent, $lightness: 20%);
+}
+
+.depth-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-top: 1px solid color.scale($color-border, $lightness: 15%);
+  font-size: 0.8rem;
+
+  span {
+    color: #6c899d;
+  }
+}
+
+/* SECCIONES */
+.content-section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  margin-top: 0.4rem;
+  color: $color-text;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section-description {
+  color: $color-muted;
+}
+
+/* CARDS */
+.ocean-card {
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid $color-border;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(20, 80, 110, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 14px 28px rgba(20, 80, 110, 0.15);
+  }
+
+  .card-img-top {
+    height: 190px;
+    object-fit: cover;
+  }
+
+  .card-title {
+    color: $color-text;
+    font-weight: bold;
+  }
+
+  .card-text {
+    color: $color-muted;
+    font-size: 0.9rem;
+  }
+}
+
+.card-category {
+  color: $color-accent;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+.footer-bluedepth {
+  padding: 3rem 0;
+  background-color: color.scale($color-border, $lightness: 25%);
+  border-top: 1px solid color.scale($color-border, $lightness: 10%);
+  color: $color-muted;
+
+  a {
+    color: $color-muted;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .hero {
+    padding: 4rem 0;
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .depth-panel {
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.8rem;
+    letter-spacing: -2px;
+  }
+
+  .content-section {
+    padding: 3.5rem 0;
+  }
+
+  .ocean-information {
+    padding: 1.5rem;
+  }
+}

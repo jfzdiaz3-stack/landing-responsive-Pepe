@@ -1,0 +1,302 @@
+@charset "UTF-8";
+/* ------------------------------ */
+/* TU CSS ADAPTADO A SASS         */
+/* ------------------------------ */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #eef8ff;
+  color: #16324a;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.text-blue {
+  background-color: rgb(8.9723756906, 173.0386740331, 223.0276243094);
+}
+
+.text-muted-custom {
+  color: #55758c;
+}
+
+.section-label {
+  color: #0787ae;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+/* NAVBAR */
+.navbar-bluedepth {
+  background-color: #fff;
+  border-bottom: 1px solid #c5e1f0;
+}
+
+.logo-box {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(12.2651933702, 190.8287292818, 245.2348066298);
+  color: #16324a;
+  border-radius: 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.brand-name {
+  color: #16324a;
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+.brand-name span {
+  color: #0787ae;
+}
+
+.brand-subtitle {
+  display: block;
+  color: #6c899d;
+  font-size: 0.55rem;
+  letter-spacing: 1px;
+}
+
+.navbar-bluedepth .nav-link {
+  color: #55758c;
+  font-size: 0.9rem;
+}
+.navbar-bluedepth .nav-link:hover {
+  background-color: rgb(8.9723756906, 173.0386740331, 223.0276243094);
+}
+
+.navbar-bluedepth .nav-link.active {
+  color: #0787ae;
+}
+
+/* BOTONES */
+.btn-ocean {
+  background-color: #0787ae;
+  border-color: #0787ae;
+  color: #fff;
+  font-weight: bold;
+  padding: 0.7rem 1.4rem;
+}
+.btn-ocean:hover {
+  background-color: rgb(6.3, 121.5, 156.6);
+  border-color: rgb(6.3, 121.5, 156.6);
+}
+
+.btn-ocean-outline {
+  background-color: transparent;
+  border: 1px solid #0787ae;
+  color: #0787ae;
+  font-weight: bold;
+}
+.btn-ocean-outline:hover {
+  background-color: #0787ae;
+  color: #fff;
+}
+
+/* HERO */
+.hero {
+  min-height: 32.5rem;
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(90deg, rgba(238, 248, 255, 0.97) 0%, rgba(238, 248, 255, 0.9) 45%, rgba(238, 248, 255, 0.35) 100%), url("../img/hero-oceano.jpg");
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid #c5e1f0;
+}
+
+.hero-title {
+  max-width: 700px;
+  margin-top: 1rem;
+  color: #16324a;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+.hero-title span {
+  color: #0787ae;
+}
+
+.hero-description {
+  max-width: 570px;
+  margin-top: 1.5rem;
+  color: #55758c;
+  line-height: 1.8;
+}
+
+/* ESTADÍSTICAS */
+.stats-container {
+  max-width: 650px;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgb(202.8, 228, 241.5);
+}
+
+.stat-number {
+  display: block;
+  color: #0787ae;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.stat-text {
+  color: #55758c;
+  font-size: 0.75rem;
+}
+
+/* PANEL PROFUNDIDAD */
+.depth-panel {
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgb(202.8, 228, 241.5);
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(20, 80, 110, 0.12);
+}
+
+.depth-panel-title {
+  color: #0787ae;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.depth-number {
+  margin: 1rem 0 0;
+  color: #16324a;
+  font-size: 3.5rem;
+  font-weight: 900;
+}
+.depth-number span {
+  color: #0787ae;
+  font-size: 1.3rem;
+}
+
+.depth-subtitle {
+  color: #6c899d;
+}
+
+.depth-progress {
+  height: 8px;
+  margin: 1.5rem 0;
+  overflow: hidden;
+  background-color: rgb(208.6, 231, 243);
+  border-radius: 20px;
+}
+
+.depth-progress-bar {
+  width: 35%;
+  height: 100%;
+  background-color: rgb(9.5447513812, 184.0773480663, 237.2552486188);
+}
+
+.depth-info {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.7rem 0;
+  border-top: 1px solid rgb(205.7, 229.5, 242.25);
+  font-size: 0.8rem;
+}
+.depth-info span {
+  color: #6c899d;
+}
+
+/* SECCIONES */
+.content-section {
+  padding: 5rem 0;
+}
+
+.section-title {
+  margin-top: 0.4rem;
+  color: #16324a;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.section-description {
+  color: #55758c;
+}
+
+/* CARDS */
+.ocean-card {
+  height: 100%;
+  overflow: hidden;
+  background-color: #fff;
+  border: 1px solid #c5e1f0;
+  border-radius: 14px;
+  box-shadow: 0 8px 20px rgba(20, 80, 110, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.ocean-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 14px 28px rgba(20, 80, 110, 0.15);
+}
+.ocean-card .card-img-top {
+  height: 190px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.ocean-card .card-title {
+  color: #16324a;
+  font-weight: bold;
+}
+.ocean-card .card-text {
+  color: #55758c;
+  font-size: 0.9rem;
+}
+
+.card-category {
+  color: #0787ae;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* FOOTER */
+.footer-bluedepth {
+  padding: 3rem 0;
+  background-color: rgb(211.5, 232.5, 243.75);
+  border-top: 1px solid rgb(202.8, 228, 241.5);
+  color: #55758c;
+}
+.footer-bluedepth a {
+  color: #55758c;
+}
+.footer-bluedepth a:hover {
+  color: #0787ae;
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .hero {
+    padding: 4rem 0;
+  }
+  .hero-title {
+    font-size: 3.5rem;
+  }
+  .depth-panel {
+    margin-top: 2rem;
+  }
+}
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: 2.8rem;
+    letter-spacing: -2px;
+  }
+  .content-section {
+    padding: 3.5rem 0;
+  }
+  .ocean-information {
+    padding: 1.5rem;
+  }
+}/*# sourceMappingURL=main.css.map */
