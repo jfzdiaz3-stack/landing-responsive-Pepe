@@ -1,35 +1,27 @@
 @use "sass:color";
 @use "sass:math";
 
-// VARIABLES
 $color-bg: #eef8ff;
 $color-text: #16324a;
 $color-muted: #55758c;
 $color-accent: #0787ae;
 $color-border: #c5e1f0;
 
-// FUNCIÓN PROPIA
 @function pxToRem($px) {
   @return math.div($px, 16) * 1rem;
 }
 
-// MIXIN
 @mixin flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-// FUNCIÓN NATIVA (lighten)
 @mixin accent-hover {
   &:hover {
     background-color: color.adjust($color-accent, $lightness: 10%);
   }
 }
-
-/* ------------------------------ */
-/* TU CSS ADAPTADO A SASS         */
-/* ------------------------------ */
 
 * {
   box-sizing: border-box;
@@ -61,7 +53,6 @@ body {
   letter-spacing: 1.5px;
 }
 
-/* NAVBAR */
 .navbar-bluedepth {
   background-color: #fff;
   border-bottom: 1px solid $color-border;
@@ -106,7 +97,6 @@ body {
   color: $color-accent;
 }
 
-/* BOTONES */
 .btn-ocean {
   background-color: $color-accent;
   border-color: $color-accent;
@@ -132,7 +122,6 @@ body {
   }
 }
 
-/* HERO */
 .hero {
   min-height: pxToRem(520);
   display: flex;
@@ -174,7 +163,6 @@ body {
   line-height: 1.8;
 }
 
-/* ESTADÍSTICAS */
 .stats-container {
   max-width: 650px;
   margin-top: 2rem;
@@ -194,7 +182,6 @@ body {
   font-size: 0.75rem;
 }
 
-/* PANEL PROFUNDIDAD */
 .depth-panel {
   padding: 2rem;
   background-color: rgba(255, 255, 255, 0.92);
@@ -252,7 +239,6 @@ body {
   }
 }
 
-/* SECCIONES */
 .content-section {
   padding: 5rem 0;
 }
@@ -268,7 +254,7 @@ body {
   color: $color-muted;
 }
 
-/* CARDS */
+
 .ocean-card {
   height: 100%;
   overflow: hidden;
@@ -306,7 +292,6 @@ body {
   letter-spacing: 1px;
 }
 
-/* FOOTER */
 .footer-bluedepth {
   padding: 3rem 0;
   background-color: color.scale($color-border, $lightness: 25%);
@@ -322,7 +307,7 @@ body {
   }
 }
 
-/* RESPONSIVE */
+
 @media (max-width: 991px) {
   .hero {
     padding: 4rem 0;
